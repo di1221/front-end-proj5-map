@@ -1,27 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Project 5 Neighborhood Map</title>
+<html>
+  <head>
+    <title>Map of Asheville NC</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div id="mapDiv">
-      <h2>Asheville, NC</h2>
 
-   <!--  -->
-        <form action="http://maps.google.com/maps" method="get" target="_self">
-           <label for="saddr"></label>
-           <input type="text" name="saddr" value="Asheville, NC" />
-           <input type="hidden" name="daddr" value="Asheville, NC" />
-        </form>
+  </head>
+  <body>
+  <!--
+      <div class="map-canvas" data-bind="map: { realtors: realtors },
+          infowindow: { realtor: selectedRealtor, messages: datastatus }"></div> -->
 
-    </div>
+        <div id="list-container">
+            <ul data-bind="foreach: realtorList">
+                <li  id="list-row" data-bind="text: name"></li>
+            </ul>
+        </div>
+<!--
+        <div id="searchbox">
+            <input placeholder="Search Box" data-bind="selected:list"/>
+        </div>
+-->
+  <div id="map" data-bind="latitude: viewModel.Lat, longitude:viewModel.Lng, map:map" ></div>
 
-    <script src="js/libs/jquery.min.js"></script>
+
+    <!-- <input class="controls" type="text" placeholder="Search Box">-->
+
+ <!--<script src="http://www.walkscore.com/tile/show-walkscore-tile.php"></script>-->
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
+
+    <script src="js/lib/jquery.min.js"></script>
     <script src="js/script.js"></script>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=Asheville, n"></script>
-	  <meta name="viewport" content="width=device-width">
-	  <script src="http://d3js.org/d3.v3.min.js"></script>
-</body>
+    <script src="js/data.js"></script>
+  </body>
 </html>

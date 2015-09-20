@@ -8,24 +8,13 @@
 
   </head>
   <body>
-  <!--
-      <div class="map-canvas" data-bind="map: { realtors: realtors },
-          infowindow: { realtor: selectedRealtor, messages: datastatus }"></div> -->
-
         <div id="list-container">
             <ul data-bind="foreach: realtorList">
                 <li  id="list-row" data-bind="text: name"></li>
             </ul>
         </div>
-<!--
-        <div id="searchbox">
-            <input placeholder="Search Box" data-bind="selected:list"/>
-        </div>
--->
-  <div id="map" data-bind="latitude: viewModel.Lat, longitude:viewModel.Lng, map:map" ></div>
 
-
-    <!-- <input class="controls" type="text" placeholder="Search Box">-->
+  <div id="map" data-bind="latitude: lat, longitude: lng, map:map" ></div>
 
  <!--<script src="http://www.walkscore.com/tile/show-walkscore-tile.php"></script>-->
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>

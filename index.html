@@ -9,21 +9,19 @@
   <body>
     <header>
     <form action="#">
-        <input id="searchbox" placeholder="Search…" type="search" name="q" data-bind="value: query,  valueUpdate: 'keyup'" autocomplete="off">
-    </form>
+       <input id="searchbox" placeholder="Search…" type="search" name="q" data-bind="value: query,  valueUpdate: 'keyup'" autocomplete="off">
+    </form>  <!-- , event: { onsearch: markerVisibility } -->
     </header>
-  <div class="list-container">
-      <ul data-bind="template: {name:'realtor', foreach:realtorList}" >
-      </ul>
-    <script type="text/html" id="realtor">
-          <li id="list-row" data-bind="text: name, event: { click: logClick }">
-        <strong data-bind="text: name"></strong>
-          </li>
-      </script>
-  </div>
+    <div class="list-container">
+        <ul id="row" data-bind="template: {name:'realtor', foreach:results}" >
+        </ul>
+      <script type="text/html" id="realtor">
+            <li id="listrow" data-bind="text: name, event: { click: logClick }">
+          <strong data-bind="text: name"></strong>
+            </li>
+        </script>
+    </div>
   <div id="map" data-bind="latitude: lat, longitude: lng, map:map" ></div>
-
-<!--<script src="https://www.zillow.com/webservice/proreviews.htm?zws-id=X1-ZWz1a2tdkm61vv_4kciw&screenname=Lorraine+Silverman&callback=?"></script> -->
 
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
